@@ -8,12 +8,16 @@ import {
 import { BackgroundBeams } from "@/components/ui/background-beams";
 import { NavbarContainer } from "@/components/NavbarContainer";
 import { AboutMe } from "@/components/Aboutme";
+import { Spotlight } from "@/components/ui/SpoyLight";
+import { FloatingNavBar } from "@/components/FloatingNavbarContainer";
+import { RecentBlogs } from "@/components/Blogs";
 
 export default function Page() {
   return (
     <div>
-      <NavbarContainer />
-      <div className="flex items-center justify-center bg-gray-200 dark:bg-[#0E0E10] h-[100vh]  w-full p-4 z-50">
+      {/* <NavbarContainer /> */}
+      <FloatingNavBar/>
+         <div className="flex items-center justify-center  h-[100vh]  w-full p-4 z-50">
         <TextRevealCard
           className=""
           text="You know how your business works"
@@ -32,6 +36,7 @@ export default function Page() {
         <div></div>
       </div>
       <AboutMe />
+      <RecentBlogs/>
     </div>
   );
 }

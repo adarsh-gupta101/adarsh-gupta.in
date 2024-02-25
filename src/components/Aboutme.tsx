@@ -4,10 +4,10 @@ import { Spotlight } from "@/components/ui/SpoyLight";
 
 export function AboutMe() {
   return (
-    <div className="h-[40rem] w-full rounded-md flex md:items-center md:justify-center bg-gray-200 dark:bg-black/[0.96] antialiased bg-grid-white/[0.02] relative overflow-hidden">
+    <div className="h-[40rem] w-full rounded-md flex md:items-center md:justify-center  antialiased bg-grid-white/[0.02] relative overflow-hidden ">
       <Spotlight
-        className="-top-40 left-0 md:left-60 md:-top-20"
-        fill="red"
+        className="-top-40 left-0 md:left-80 md:-top-20"
+        fill="blue"
       />
       <div className=" p-4 max-w-7xl  mx-auto relative z-10  w-full pt-20 md:pt-0">
         <h1 className="text-4xl md:text-7xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b dark:from-neutral-50 dark:to-neutral-400 from-neutral-700 to-neutral-500 bg-opacity-50">
