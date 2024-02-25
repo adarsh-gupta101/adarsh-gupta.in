@@ -18,7 +18,7 @@ function Navbar({ className }: { className?: string }) {
   const [active, setActive] = useState<string | null>(null);
   return (
     <div
-      className={cn("fixed top-10 inset-x-0 max-w-2xl mx-auto z-50", className)}
+      className={cn("fixed top-10 inset-x-0 max-w-2xl mx-auto z-50 ", className)}
     >
       <Menu setActive={setActive}>
         <Link href="/">
@@ -34,8 +34,8 @@ function Navbar({ className }: { className?: string }) {
             {/* <HoveredLink hre/>f="/branding">Branding</HoveredLink> */}
           </div>
         </MenuItem>
-        <Link href="/youtube"> Youtube
-        {/* <MenuItem setActive={setActive} active={active} item="Youtube">
+        <Link href="/youtube"> 
+         <MenuItem setActive={setActive} active={active} item="Youtube">
           {/* <div className="  text-sm grid grid-cols-2 gap-10 p-4">
             <ProductItem
               title="Algochurn"
@@ -62,7 +62,7 @@ function Navbar({ className }: { className?: string }) {
               description="Respond to government RFPs, RFIs and RFQs 10x faster using AI"
             />
           </div> */}
-        {/* </MenuItem>  */}
+        </MenuItem> 
         
         </Link>
         <MenuItem setActive={setActive} active={active} item="Pricing">

@@ -7,12 +7,13 @@ import {
 } from "@/components/ui/text-reveal-card";
 import { BackgroundBeams } from "@/components/ui/background-beams";
 import { NavbarContainer } from "@/components/NavbarContainer";
+import { AboutMe } from "@/components/Aboutme";
 
 export default function Page() {
   return (
     <div>
       <NavbarContainer />
-      <div className="flex items-center justify-center bg-[#0E0E10] h-[100vh]  w-full p-4 z-50">
+      <div className="flex items-center justify-center bg-gray-200 dark:bg-[#0E0E10] h-[100vh]  w-full p-4 z-50">
         <TextRevealCard
           className=""
           text="You know how your business works"
@@ -27,7 +28,10 @@ export default function Page() {
           </TextRevealCardDescription>
         </TextRevealCard>
         {/* <BackgroundB/>eams/> */}
+
+        <div></div>
       </div>
+      <AboutMe />
     </div>
   );
 }
