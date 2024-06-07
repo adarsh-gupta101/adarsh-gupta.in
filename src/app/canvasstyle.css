@@ -1,0 +1,70 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+body {
+  background: linear-gradient(
+    135deg,
+    hsla(259, 80%, 33%, 1) 16%,
+    hsla(263, 88%, 36%, 1) 52%,
+    hsla(268, 100%, 42%, 1) 86%
+  );
+  color: #ddd;
+}
+
+.flow {
+  width: 100vw;
+  height: 100vh;
+  gap: 1.25em;
+  color: gray;
+  border: 2px solid white;
+  border-radius: 15px;
+  position: relative;
+  cursor: none; /* Hide the default cu
+  */
+}
+
+
+
+.trail {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  /* background: #f502b4; */
+  background: linear-gradient(
+    90deg,
+    rgb(255, 0, 208) 86%,
+    rgb(240, 39, 210) 52%,
+    rgb(255, 83, 212) 86%
+  );
+  box-shadow: 1px 1px 5px 1px rgba(239, 8, 247, 0.9);
+  filter: blur(4px) brightness(100%);
+  transition: ease 0.2s;
+  animation: trailAnimation 0.2s linear forwards;
+  z-index: 100000;
+}  
+
+
+
+@keyframes trailAnimation {
+  0% {
+    opacity: 1;
+    transform: scale(1.9);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+}
