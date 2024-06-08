@@ -14,8 +14,25 @@ import { RecentBlogs } from "@/components/Blogs";
 import ConfettiCanvas from "@/app/canvas";
 import { BentoGrid, BentoGridItem } from "@/components/ui/bento-grid";
 import { FlipWords } from "@/components/ui/flip-words";
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
+import { useLoader } from '@react-three/fiber'
+import { Environment, OrbitControls } from "@react-three/drei";
+import { Canvas } from "@react-three/fiber";
+import { Suspense } from "react";
+import { useFrame } from '@react-three/fiber'
+
+
+
+
+
+function Scene() {
+  const gltf = useLoader(GLTFLoader, '/untitled.glb')
+  return <primitive object={gltf.scene} />
+}
 
 export default function Page() {
+
+  
   const data = [
     {
       name: "Software Developer",
@@ -28,21 +45,28 @@ export default function Page() {
     <div>
       {/* <NavbarContainer /> */}
       {/* <FloatingNavBar /> */}
+      <div className="flex flex-col items-center justify-center  h-[30vh]  w-full p-4  top-10">
 
-      
+<h1 className="scroll-m-20 text-5xl font-extrabold tracking-tight lg:text-5xl text-center text-gray-800">
+  OK, Here is Yet Another PERSON <br/>GOOD AT <FlipWords words={["GOOOGLING", "Coding", "Techncial_Writing"]}/> 
+</h1>
 
-      <div className="flex flex-col items-center justify-center  h-[100vh]  w-full p-4 z-50">
+<p className="leading-7 [&:not(:first-child)]:mt-6">
+</p>
+  
 
-      <h1 className="scroll-m-20 text-5xl font-extrabold tracking-tight lg:text-5xl text-center">
-        OK, Here is Yet Another PERSON <br/>GOOD AT <FlipWords words={["GOOOGLING", "Coding", "Techncial_Writing"]}/> 
-      </h1>
+  <div></div>
+</div>
+      <Canvas style={{height:"80vh", width:"80vw",zIndex:1000,margin:"auto"}}>
+      <pointLight position={[-10, -10, -10]} color="#48cc90" intensity={50000} />
 
-      <p className="leading-7 [&:not(:first-child)]:mt-6">
-      </p>
-        
-
-        <div></div>
-      </div>
+        <Suspense fallback={null}>
+          <Scene />
+          <OrbitControls />
+          <Environment preset="studio" background />
+        </Suspense>
+      </Canvas>
+ 
       <AboutMe />
       <RecentBlogs />
     </div>
