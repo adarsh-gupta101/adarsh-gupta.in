@@ -47,7 +47,7 @@ export default function Page() {
       {/* <FloatingNavBar /> */}
       <div className="flex flex-col items-center justify-center  h-[30vh]  w-full p-4  top-10">
 
-<h1 className="scroll-m-20 text-5xl font-extrabold tracking-tight lg:text-5xl text-center text-gray-800">
+<h1 className="scroll-m-20 text-5xl font-extrabold tracking-tight lg:text-5xl text-center dark:text-white text-gray-800">
   OK, Here is Yet Another PERSON <br/>GOOD AT <FlipWords words={["GOOOGLING", "Coding", "Techncial_Writing"]}/> 
 </h1>
 
