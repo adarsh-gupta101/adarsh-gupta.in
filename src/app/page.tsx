@@ -14,7 +14,7 @@ import { RecentBlogs } from "@/components/Blogs";
 import ConfettiCanvas from "@/app/canvas";
 import { BentoGrid, BentoGridItem } from "@/components/ui/bento-grid";
 import { FlipWords } from "@/components/ui/flip-words";
-import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
 import { useLoader } from '@react-three/fiber'
 import { Environment, OrbitControls } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
