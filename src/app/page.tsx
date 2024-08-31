@@ -1,74 +1,83 @@
-"use client";
-import React from "react";
-import {
-  TextRevealCard,
-  TextRevealCardDescription,
-  TextRevealCardTitle,
-} from "@/components/ui/text-reveal-card";
-import { BoxesCore } from "@/components/ui/background-boxes";
-import { NavbarContainer } from "@/components/NavbarContainer";
-import { AboutMe } from "@/components/Aboutme";
-import { Spotlight } from "@/components/ui/SpoyLight";
-import { FloatingNavBar } from "@/components/FloatingNavbarContainer";
 import { RecentBlogs } from "@/components/Blogs";
-import ConfettiCanvas from "@/app/canvas";
-import { BentoGrid, BentoGridItem } from "@/components/ui/bento-grid";
-import { FlipWords } from "@/components/ui/flip-words";
-import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
-import { useLoader } from '@react-three/fiber'
-import { Environment, OrbitControls } from "@react-three/drei";
-import { Canvas } from "@react-three/fiber";
-import { Suspense } from "react";
-import { useFrame } from '@react-three/fiber'
-
-
-
-
-
-function Scene() {
-  const gltf = useLoader(GLTFLoader, '/untitled.glb')
-  return <primitive object={gltf.scene} />
-}
+import Image from "next/image";
+import Link from "next/link";
 
 export default function Page() {
-
-  
-  const data = [
-    {
-      name: "Software Developer",
-    },
-    {
-      name: "Technical Content Writer",
-    },
-  ];
   return (
-    <div>
-      {/* <NavbarContainer /> */}
-      {/* <FloatingNavBar /> */}
-      <div className="flex flex-col items-center justify-center  h-[30vh]  w-full p-4  top-10">
-
-<h1 className="scroll-m-20 text-5xl font-extrabold tracking-tight lg:text-5xl text-center dark:text-white text-gray-800">
-  OK, Here is Yet Another PERSON <br/>GOOD AT <FlipWords words={["GOOOGLING", "Coding", "Techncial_Writing"]}/> 
-</h1>
-
-<p className="leading-7 [&:not(:first-child)]:mt-6">
-</p>
+    <div className="bg-gray-900 text-white p-4 sm:p-8 rounded-3xl max-w-5xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div>
+      <h1 className="text-3xl sm:text-4xl font-bold mb-4">You Ideate, We Implement</h1>
+          <button className="bg-purple-600 px-4 py-2 rounded-full">
+            <a href="https://x.com/Adarsh____gupta">
+            Hire Me 👋
+            </a>
+          </button>
+          
+          <div className="flex flex-wrap mt-4 gap-4">
+            <div className="bg-emerald-500 p-4 rounded-xl">
+              <div className="text-2xl font-bold">2+</div>
+              <div className="text-sm">Years Experience</div>
+            </div>
+            <div className="bg-yellow-500 p-4 rounded-xl">
+              <div className="text-2xl font-bold">10+</div>
+              <div className="text-sm">Handled Project</div>
+            </div>
+            <div className="bg-red-400 p-4 rounded-xl">
+              <div className="text-2xl font-bold">10+</div>
+              <div className="text-sm">Clients</div>
+            </div>
+            <div className="bg-red-400 p-4 rounded-xl">
+              <div className="text-2xl font-bold">100+</div>
+              <div className="text-sm">Technical articles</div>
+            </div>
+          </div>
+        </div>
+        
+        <div className="space-y-4 mt-4 md:mt-0">
+        <div className="bg-purple-600 rounded-xl p-2 max-w-xs mx-auto md:mx-0">
+        <Image src="/adarsh.jpg" alt="Profile" width={200} height={200} className="rounded-xl" />
+          </div>
+          <div className="bg-gray-800 p-4 rounded-xl">
+            <div>Name: Adarsh Gupta</div>
+            <div>Based in: India</div>
+            {/* Add a small graph component here */}
+          </div>
+          <div className="flex space-x-2">
+            <Link href="https://www.linkedin.com/in/adarsh1gupta/" className="bg-blue-600 p-2 rounded-sm">in</Link>
+            <Link href="https://medium.com/@adarsh-gupta" className="bg-gray-700 p-2 rounded-sm">
+              {/* Add Dribbble icon */}
+              M
+            </Link>
+            <Link href="https://x.com/Adarsh____gupta" className="bg-gray-800 p-2 rounded-sm">
+              {/* Add Twitter icon */}
+              X
+            </Link>
+            <Link href="https://www.youtube.com/@Paralaxxed" className="bg-pink-600 p-2 rounded-sm">
+              {/* Add Instagram icon */}
+              Y
+            </Link>
+          </div>
+        </div>
+      </div>
+      
   
+      
+      <div className="mt-8 grid grid-cols-2 gap-4">
+        <div>
+          <h2 className="text-xl font-bold mb-2">About</h2>
+          <p className="text-gray-400">
+            I am a developer with a passion for creating intuitive and visually appealing user interfaces. 
+          </p>
+        </div>
+        <div>
+          {/* <h2 className="text-xl font-bold mb-2">Resume</h2> */}
+          {/* Add resume content or link */}
 
-  <div></div>
-</div>
-      <Canvas style={{height:"80vh", width:"80vw",zIndex:1000,margin:"auto"}}>
-      <pointLight position={[-10, -10, -10]} color="#48cc90" intensity={50000} />
+        </div>
+      </div>
 
-        <Suspense fallback={null}>
-          <Scene />
-          <OrbitControls />
-          <Environment preset="studio" background />
-        </Suspense>
-      </Canvas>
- 
-      <AboutMe />
-      <RecentBlogs />
+      <RecentBlogs/>
     </div>
   );
 }
