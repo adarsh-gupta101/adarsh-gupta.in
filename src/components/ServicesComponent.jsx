@@ -10,6 +10,7 @@ import { EarthModel } from "./Earth";
 import ModelLoader from "./ModelLoader";
 import { useMediaQuery } from "react-responsive";
 import { easing } from "maath";
+import Link from "next/link";
 
 function ServicesComponent() {
   const isMobile = useMediaQuery({ maxWidth: 768 });
@@ -45,7 +46,11 @@ function ServicesComponent() {
           </Suspense>
         </Canvas>
       </div>
-        <h2 className="text-2xl font-normal text-gray-800 dark:text-gray-100 text-center">Hire me if you are from here 👋🏻</h2>
+        <h2 className="text-2xl font-normal text-gray-800 dark:text-gray-100 text-center underline underline-offset-4 ">
+            <Link href="https://x.com/adarsh____gupta">
+                Hire me if you are from here 👋🏻
+            </Link>
+        </h2>
     </div>
   );
 }

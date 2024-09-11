@@ -19,9 +19,9 @@ function NavbarContainer() {
       </h1>
 
       <div className="md:hidden mt-4">
-        <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
+        {/* <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
           {isMenuOpen ? "Close" : "Menu"}
-        </button>
+        </button> */}
       </div>
 
       <div className={`${isMenuOpen ? 'block' : 'hidden'} md:block mt-4 md:mt-0`}>
