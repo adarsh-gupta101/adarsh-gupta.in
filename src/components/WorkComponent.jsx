@@ -110,7 +110,7 @@ function WorkComponent() {
           />
           <SocialLink
             href="https://www.youtube.com/@Paralaxxed"
-            imgSrc="/buis_logo/youtube.png"
+            imgSrc="/buis_logo/Youtube.png"
             alt="YouTube"
             text="YouTube"
             textColor="dark:text-white text-gray-800"
@@ -118,7 +118,7 @@ function WorkComponent() {
           />
           <SocialLink
             href="https://www.linkedin.com/in/adarsh-gupta-000000200/"
-            imgSrc="/buis_logo/linkedin.png"
+            imgSrc="/buis_logo/Linkedin.png"
             alt="LinkedIn"
             text="LinkedIn"
             textColor="dark:text-white text-gray-800"
