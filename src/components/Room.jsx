@@ -5,7 +5,7 @@ import { useGLTF } from '@react-three/drei'
 
 export default function RoomModel(props) {
   const { nodes, materials } = useGLTF('/untitledll.glb')
-  return (
+  return ( 
     <group {...props} dispose={null}>
       <mesh
         castShadow

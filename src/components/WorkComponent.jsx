@@ -82,7 +82,7 @@ function WorkComponent() {
                 //   controls.RotationX,
                 //   controls.RotationY,
                 //   controls.RotationZ,
-                // ]}
+                // ]} 
                 // scale={0.46}
               />
             </CameraMove>

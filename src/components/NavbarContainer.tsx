@@ -25,12 +25,12 @@ function NavbarContainer() {
       </div>
 
       <div className={`${isMenuOpen ? 'block' : 'hidden'} md:block mt-4 md:mt-0`}>
-        <ul className="flex flex-col md:flex-row gap-4">
+        {/* <ul className="flex flex-col md:flex-row gap-4">
           <li className="hover:text-gray-400 cursor-pointer hover:underline transition-all duration-300">Home</li>
           <li className="hover:text-gray-400 cursor-pointer hover:underline transition-all duration-300">Works</li>
           <li className="hover:text-gray-400 cursor-pointer hover:underline transition-all duration-300">About</li>
           <li className="hover:text-gray-400 cursor-pointer hover:underline transition-all duration-300">Contact</li>
-        </ul>
+        </ul> */}
       </div>
 
       <ModeToggle />
