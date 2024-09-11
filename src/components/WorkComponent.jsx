@@ -63,8 +63,11 @@ function WorkComponent() {
         <Canvas className="h-full w-full">
           <Suspense fallback={<ModelLoader />}>
             <PerspectiveCamera makeDefault position={[0, 0, 1]} />
-            <OrbitControls />
+            
             <CameraMove isMobile={isMobile}>
+              {
+  isMobile ? <OrbitControls/> :""
+}
               <ManModel
                 animationNumber={2}
                 scale={isMobile ? 2 : isTablet ? 0.3 : 0.46}
@@ -175,7 +178,7 @@ const CameraMove = ({ children, isMobile }) => {
 
   useFrame((state, delta) => {
     if (isMobile) {
-      easing.damp3(state.camera.position, [0, 0, 5], 0.25, delta);
+      easing.damp3(state.camera.position, [0, 0, 5], 0.5, delta);
     } else {
       easing.dampE(
         groupRef.current.rotation,

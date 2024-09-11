@@ -16,10 +16,9 @@ function ServicesComponent() {
   const isMobile = useMediaQuery({ maxWidth: 768 });
   const isTablet = useMediaQuery({ minWidth: 769, maxWidth: 1024 });
 
- 
   return (
     <div className="flex flex-col items-center justify-center pt-4 md:pt-16 min-h-screen h-fit w-full">
-        <h1 className="text-5xl font-extrabol text-center mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-green-500">
+      <h1 className="text-5xl font-extrabol text-center mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-green-500">
         Services Only Available for People in Earth now!{" "}
       </h1>
       <p className="text-xl text-center dark:text-gray-100 my-4">
@@ -28,29 +27,28 @@ function ServicesComponent() {
       {/* <div className="w-full h-full flex-grow"></div> */}
       <div className="w-full h-[50vh] flex-grow">
         {/* <Leva/>  */}
-      
 
         <Canvas
           className="w-full h-full 
         "
         >
           <Suspense fallback={<ModelLoader />}>
-            <OrbitControls enableZoom={false} enablePan={false} />
             <PerspectiveCamera makeDefault position={[0, 0, 10]} />
             <ambientLight intensity={12} />
             <directionalLight position={[10, 10, 10]} intensity={4} />
             <pointLight position={[1, 1, 1]} />
             <CameraMove isMobile={isMobile}>
+              {isMobile ? <OrbitControls /> : ""}
               <EarthModel position={[0, 0, 0]} scale={isMobile ? 0.16 : 0.46} />
             </CameraMove>
           </Suspense>
         </Canvas>
       </div>
-        <h2 className="text-2xl font-normal text-gray-800 dark:text-gray-100 text-center underline underline-offset-4 ">
-            <Link href="https://x.com/adarsh____gupta">
-                Hire me if you are from here 👋🏻
-            </Link>
-        </h2>
+      <h2 className="text-2xl font-normal text-gray-800 dark:text-gray-100 text-center underline underline-offset-4 ">
+        <Link href="https://x.com/adarsh____gupta">
+          Hire me if you are from here 👋🏻
+        </Link>
+      </h2>
     </div>
   );
 }
