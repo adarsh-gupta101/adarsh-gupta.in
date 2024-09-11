@@ -6,7 +6,6 @@ import {
   PerspectiveCamera,
   useEnvironment,
 } from "@react-three/drei";
-import {  useControls } from "leva";
 import { EarthModel } from "./Earth";
 import ModelLoader from "./ModelLoader";
 import { useMediaQuery } from "react-responsive";
@@ -16,32 +15,7 @@ function ServicesComponent() {
   const isMobile = useMediaQuery({ maxWidth: 768 });
   const isTablet = useMediaQuery({ minWidth: 769, maxWidth: 1024 });
 
-  const controls = useControls("Sphere", {
-    positionX: {
-      value: 1,
-      min: 0,
-      max: 10,
-      step: 0.01,
-    },
-    positionY: {
-      value: 1,
-      min: 0,
-      max: 10,
-      step: 0.01,
-    },
-    positionZ: {
-      value: 1,
-      min: 0,
-      max: 10,
-      step: 0.01,
-    },
-    scale: {
-      value: 1,
-      min: 0,
-      max: 10,
-      step: 0.01,
-    },
-  });
+ 
   return (
     <div className="flex flex-col items-center justify-center pt-4 md:pt-16 min-h-screen h-fit w-full">
         <h1 className="text-5xl font-extrabol text-center mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-green-500">
