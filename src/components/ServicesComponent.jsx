@@ -37,10 +37,10 @@ function ServicesComponent() {
             <ambientLight intensity={12} />
             <directionalLight position={[10, 10, 10]} intensity={4} />
             <pointLight position={[1, 1, 1]} />
-            <CameraMove isMobile={isMobile}>
+            {/* <CameraMove isMobile={isMobile}> */}
               {isMobile ? <OrbitControls /> : ""}
               <EarthModel position={[0, 0, 0]} scale={isMobile ? 0.16 : 0.46} />
-            </CameraMove>
+            {/* </CameraMove> */}
           </Suspense>
         </Canvas>
       </div>
