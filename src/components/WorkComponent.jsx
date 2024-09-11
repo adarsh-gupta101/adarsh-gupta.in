@@ -117,7 +117,7 @@ function WorkComponent() {
             hoverColor="hover:bg-red-700"
           />
           <SocialLink
-            href="https://www.linkedin.com/in/adarsh-gupta-000000200/"
+            href="https://www.linkedin.com/in/adarsh1gupta/"
             imgSrc="/buis_logo/Linkedin.png"
             alt="LinkedIn"
             text="LinkedIn"
