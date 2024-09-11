@@ -1,5 +1,5 @@
 "use client";
-import { NavbarContainer } from "@/components/NavbarContainer";
+import NavbarContainer from "@/components/NavbarContainer";
 import { BackgroundGradient } from "@/components/ui/background-gradient";
 
 import React from "react";
