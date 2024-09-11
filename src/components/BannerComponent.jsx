@@ -14,25 +14,27 @@ function BannerComponent() {
   const isTablet = useMediaQuery({ minWidth: 769, maxWidth: 1024 });
 
   return (
-    <div className="h-screen w-full flex flex-col md:flex-col justify-center items-center">
+    <div className="h-screen w-full flex flex-col md:flex-col justify-center items-center md:mt-16">
       <div className="flex flex-col items-center justify-start p-4 md:w-4/5 mt-6 md:mt-8">
         <h1 className="text-3xl md:text-4xl lg:text-5xl font-medium dark:text-gray-200 text-gray-800 text-center md:text-left">
           Hi... I&apos;m Adarsh Gupta 👨🏻‍💻
         </h1>
-        <p className="text-4xl md:text-5xl lg:text-6xl mt-4 font-bold dark:text-transparent dark:bg-clip-text dark:bg-gradient-to-r text-gray-700 dark:from-cyan-400 dark:via-pink-400 dark:to-yellow-400 animate-shine text-center md:text-left ">
+        <p className="text-4xl md:text-5xl   lg:text-6xl mt-4 font-bold dark:text-transparent dark:bg-clip-text dark:bg-gradient-to-r text-gray-700 dark:from-cyan-400 dark:via-pink-400 dark:to-yellow-400 animate-shine text-center md:text-center sm:text-left ">
           Building digital Experience with code
         </p>
       </div>
 
-      <div className="h-[70vh] md:h-full w-full md:w-4/5">
-        <Canvas className="h-full w-full">
+      <div className="h-[80vh] md:h-full w-full md:w-4/5 ">
+        <Canvas className="md:h-full md:w-full">
           <Suspense fallback={<ModelLoader />}>
             <PerspectiveCamera makeDefault position={[0, 0, 5]} />
             {/* <OrbitControls/> */}
             <CameraMove isMobile={isMobile}>
-
+{
+  isMobile ? <OrbitControls/> :""
+}
               <RoomModel
-                scale={isMobile ? 0.26 : isTablet ? 0.30 : 0.36}
+                scale={isMobile ? 0.216 : isTablet ? 0.30 : 0.46}
                 position={
                   isMobile
                     ? [0, -0.5, 0]
@@ -44,7 +46,7 @@ function BannerComponent() {
               />
             </CameraMove>
             <ambientLight intensity={2} />
-            <directionalLight position={[10, 10, 10]} intensity={4} />
+            <directionalLight position={[10, 10, 0]} intensity={4} />
           </Suspense>
         </Canvas>
       </div>

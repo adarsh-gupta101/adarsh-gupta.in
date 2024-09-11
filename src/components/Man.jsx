@@ -11,7 +11,8 @@ export function ManModel(props) {
     // Play the first animation (assuming there's at least one)
     const actionNames = Object.keys(actions);
     if (actionNames.length > 0) {
-      const firstAction = actions[actionNames[3]];
+      console.log(props.animationNumber);
+      const firstAction = actions[actionNames[props.animationNumber || 3]];
       firstAction.play();
     }
   }, [actions]);

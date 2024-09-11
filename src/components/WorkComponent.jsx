@@ -7,62 +7,66 @@ import ModelLoader from "@/components/ModelLoader";
 import { useMediaQuery } from "react-responsive";
 import { ManModel } from "./Man";
 import { easing } from "maath";
+import Image from "next/image";
 //
 import { OrbitControls, PerspectiveCamera } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
+import Link from "next/link";
 // import { Leva, useControls } from "leva";
+import { motion } from 'framer-motion';
 
 function WorkComponent() {
-//   const controls = useControls("Man", {
-//     PositionX: {
-//       value: 0,
-//       min: -10,
-//       max: 10,
-//     },
-//     PositionY: {
-//       value: 0,
-//       min: -10,
-//       max: 10,
-//     },
-//     PositionZ: {
-//       value: 0,
-//       min: -10,
-//       max: 10,
-//     },
-//     RotationX: {
-//       value: 0,
-//       min: -10,
-//       max: 10,
-//     },
-//     RotationY: {
-//       value: 0,
-//       min: -10,
-//       max: 10,
-//     },
+  //   const controls = useControls("Man", {
+  //     PositionX: {
+  //       value: 0,
+  //       min: -10,
+  //       max: 10,
+  //     },
+  //     PositionY: {
+  //       value: 0,
+  //       min: -10,
+  //       max: 10,
+  //     },
+  //     PositionZ: {
+  //       value: 0,
+  //       min: -10,
+  //       max: 10,
+  //     },
+  //     RotationX: {
+  //       value: 0,
+  //       min: -10,
+  //       max: 10,
+  //     },
+  //     RotationY: {
+  //       value: 0,
+  //       min: -10,
+  //       max: 10,
+  //     },
 
-//     RotationZ: {
-//       value: 0,
-//       min: -10,
-//       max: 10,
-//     },
-//     Scale: {
-//       value: 0.5,
-//       min: 0,
-//       max: 1,
-//     },
-//   });
+  //     RotationZ: {
+  //       value: 0,
+  //       min: -10,
+  //       max: 10,
+  //     },
+  //     Scale: {
+  //       value: 0.5,
+  //       min: 0,
+  //       max: 1,
+  //     },
+  //   });
 
   const isMobile = useMediaQuery({ maxWidth: 768 });
   const isTablet = useMediaQuery({ minWidth: 769, maxWidth: 1024 });
   return (
-    <div className="w-full h-[100vh] my-12 flex md:flex-row flex-col-reverse justify-evenly items-center">
-      <div className="bg-gray-800 h-full w-full md:w-1/3">
+    <div className="w-full min-h-[100vh]  my-12 flex md:flex-row flex-col-reverse justify-evenly items-center">
+      <div className="bg-gray-800 rounded h-screen w-full md:w-1/3">
         <Canvas className="h-full w-full">
           <Suspense fallback={<ModelLoader />}>
             <PerspectiveCamera makeDefault position={[0, 0, 1]} />
             <OrbitControls />
             <CameraMove isMobile={isMobile}>
               <ManModel
+                animationNumber={2}
                 scale={isMobile ? 2 : isTablet ? 0.3 : 0.46}
                 position={
                   isMobile
@@ -88,11 +92,81 @@ function WorkComponent() {
         </Canvas>
       </div>
       <div className="flex flex-col justify-center items-center">
-        <h3 className="text-white text-3xl m-4 md:text-6xl font-bold">Good to meet you here</h3>
+        <h3 className="text-gray-800 text-center dark:text-gray-200 text-3xl m-4 md:text-6xl font-bold">
+          Good to meet you here
+        </h3>
+       
+
+
+        <div className="flex flex-row gap-2 flex-wrap justify-center">
+          <SocialLink
+            href="https://x.com/adarsh____gupta"
+            imgSrc="/buis_logo/X.png"
+            alt="Twitter"
+            text="Twitter"
+            textColor="dark:text-white text-gray-800 "
+            hoverColor="hover:bg-gray-800"
+            additionnalClass="dark:invert-0 inver"
+          />
+          <SocialLink
+            href="https://www.youtube.com/@Paralaxxed"
+            imgSrc="/buis_logo/youtube.png"
+            alt="YouTube"
+            text="YouTube"
+            textColor="dark:text-white text-gray-800"
+            hoverColor="hover:bg-red-700"
+          />
+          <SocialLink
+            href="https://www.linkedin.com/in/adarsh-gupta-000000200/"
+            imgSrc="/buis_logo/linkedin.png"
+            alt="LinkedIn"
+            text="LinkedIn"
+            textColor="dark:text-white text-gray-800"
+            hoverColor="hover:bg-blue-700"
+          />
+          <SocialLink
+            href="https://github.com/adarsh-gupta101"
+            imgSrc="/buis_logo/github.png"
+            alt="GitHub"
+            text="GitHub"
+            textColor="dark:text-white text-gray-800"
+            hoverColor="hover:bg-black"
+            additionnalClass="dark:invert"
+
+          />
+          <SocialLink
+            href="https://medium.com/adarsh-gupta101"
+            imgSrc="/buis_logo/medium.svg"
+            alt="Medium"
+            text="Medium"
+            textColor="dark:text-white text-gray-800"
+            hoverColor="hover:bg-gray-800"
+            additionnalClass="dark:invert"
+          />
+        </div>
       </div>
     </div>
   );
 }
+
+const SocialLink = ({ href, imgSrc, alt, text, bgColor, textColor, hoverColor,additionnalClass }) => (
+  <motion.div
+    whileHover={{ scale: 1.05 }}
+    whileTap={{ scale: 0.95 }}
+    className={`flex items-center justify-center  ${hoverColor} p-2 rounded-lg cursor-pointer transition-colors duration-300 dark:bg-opacity-80 dark:hover:bg-opacity-100`}
+  >
+    <Link href={href} className="flex items-center gap-2">
+      <Image
+        src={imgSrc}
+        alt={alt}
+        width={100}
+        height={100}
+        className={`w-6 h-6 object-contain ${additionnalClass}`}
+      />
+      <p className={`${textColor} text-xl`}>{text}</p>
+    </Link>
+  </motion.div>
+);
 
 export default WorkComponent;
 

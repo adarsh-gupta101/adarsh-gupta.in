@@ -24,25 +24,26 @@ function InfoComponent() {
   ];
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 p-4 h-fit  justify-center items-center">
-      {data.map((data, index) => (
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-4 pb-16 h-fit mb-24">
+      {data.map((item, index) => (
         <div
           key={index}
-          className="rounded-lg shadow-md border w-full md:w-96  flex flex-col items-start justify-center dark:bg-gray-800 bg-gray-200 hover:scale-105 transition-all duration-300 hover:shadow-xl hover:border-none"
+
+          className="rounded-lg group  shadow-md border w-full flex flex-col items-start justify-center dark:bg-gray-800 bg-gray-200 hover:scale-105 transition-all duration-300 hover:shadow-xl hover:border-none"
         >
-          {data.image && (
+          {item.image && (
             <Image
-              src={data.image}
-              alt={data.title}
+              src={item.image}
+              alt={item.title}
               width={400}
               height={400}
-              className="w-full h-72 object-contain  rounded-lg rotate-3d invert dark:invert-0"
+              className="w-full group-hover:backdrop-invert-0 h-48 sm:h-56 md:h-64 object-contain  transition-all duration-300 rounded-t-lg rotate-3d invert dark:invert-0"
             />
           )}
-          <div className="p-4">
-            <h3 className="text-2xl  font-bold">{data.title}</h3>
-            <p className="text text-gray-800 dark:text-gray-200 mt-4">
-              {data.Description}
+          <div className="p-4 flex-grow">
+            <h3 className="text-xl sm:text-2xl font-bold">{item.title}</h3>
+            <p className="text-sm sm:text-base text-gray-800 dark:text-gray-200 mt-2">
+              {item.Description}
             </p>
           </div>
         </div>
