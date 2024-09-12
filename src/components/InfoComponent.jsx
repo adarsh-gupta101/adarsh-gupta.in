@@ -13,7 +13,7 @@ function InfoComponent() {
       title: "Skillset",
       image: "/02.png",
       Description:
-        "Compfortable with both frontend and backend development, with a focus on Next.js",
+        "Comfortable with both frontend and backend development, with a focus on Next.js",
     },
     {
       title: "Available for work",
