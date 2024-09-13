@@ -65,9 +65,9 @@ function WorkComponent() {
             <PerspectiveCamera makeDefault position={[0, 0, 1]} />
             
             <CameraMove isMobile={isMobile}>
-              {
+              {/* {
   isMobile ? <OrbitControls/> :""
-}
+} */}
               <ManModel
                 animationNumber={2}
                 scale={isMobile ? 2 : isTablet ? 0.3 : 0.46}
