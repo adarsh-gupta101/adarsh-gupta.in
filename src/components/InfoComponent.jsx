@@ -37,7 +37,7 @@ function InfoComponent() {
               alt={item.title}
               width={400}
               height={400}
-              className="w-full group-hover:backdrop-invert-0 h-48 sm:h-56 md:h-64 object-contain  transition-all duration-300 rounded-t-lg rotate-3d invert dark:invert-0"
+              className="w-full h-48 sm:h-56 md:h-64 object-contain  transition-all duration-300 rounded-t-lg rotate-3d bg-gray-800 dark:invert-0"
             />
           )}
           <div className="p-4 flex-grow">

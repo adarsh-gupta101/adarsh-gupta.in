@@ -59,7 +59,7 @@ function WorkComponent() {
   const isTablet = useMediaQuery({ minWidth: 769, maxWidth: 1024 });
   return (
     <div className="w-full min-h-[100vh]  my-12 flex md:flex-row flex-col-reverse justify-evenly items-center">
-      <div className="bg-gray-800 rounded h-screen w-full md:w-1/3">
+      <div className="rounded h-screen w-full md:w-1/3">
         <Canvas className="h-full w-full">
           <Suspense fallback={<ModelLoader />}>
             <PerspectiveCamera makeDefault position={[0, 0, 1]} />
@@ -108,8 +108,8 @@ function WorkComponent() {
             alt="Twitter"
             text="Twitter"
             textColor="dark:text-white text-gray-800 "
-            hoverColor="hover:bg-gray-800"
-            additionnalClass="dark:invert-0 inver"
+            hoverColor="hover:bg-gray-400 hover:text-white "
+            additionnalClass="dark:invert-0 invert"
           />
           <SocialLink
             href="https://www.youtube.com/@Paralaxxed"
@@ -117,7 +117,7 @@ function WorkComponent() {
             alt="YouTube"
             text="YouTube"
             textColor="dark:text-white text-gray-800"
-            hoverColor="hover:bg-red-700"
+            hoverColor="hover:bg-red-200"
           />
           <SocialLink
             href="https://www.linkedin.com/in/adarsh1gupta/"
@@ -125,7 +125,7 @@ function WorkComponent() {
             alt="LinkedIn"
             text="LinkedIn"
             textColor="dark:text-white text-gray-800"
-            hoverColor="hover:bg-blue-700"
+            hoverColor="hover:bg-blue-300"
           />
           <SocialLink
             href="https://github.com/adarsh-gupta101"
@@ -133,7 +133,7 @@ function WorkComponent() {
             alt="GitHub"
             text="GitHub"
             textColor="dark:text-white text-gray-800"
-            hoverColor="hover:bg-black"
+            hoverColor="hover:bg-gray-400"
             additionnalClass="dark:invert"
 
           />
@@ -143,7 +143,7 @@ function WorkComponent() {
             alt="Medium"
             text="Medium"
             textColor="dark:text-white text-gray-800"
-            hoverColor="hover:bg-gray-800"
+            hoverColor="hover:bg-gray-400"
             additionnalClass="dark:invert"
           />
         </div>

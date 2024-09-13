@@ -18,7 +18,7 @@ function ServicesComponent() {
 
   return (
     <div className="flex flex-col items-center justify-center pt-4 md:pt-16 min-h-screen h-fit w-full">
-      <h1 className="text-5xl font-extrabol text-center mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-green-500">
+      <h1 className="text-5xl font-extrabold text-center mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-pink-500">
         Services Only Available for People in Earth now!{" "}
       </h1>
       <p className="text-xl text-center dark:text-gray-100 my-4">
