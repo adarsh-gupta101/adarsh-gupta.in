@@ -35,7 +35,7 @@ function ServicesComponent() {
           <Suspense fallback={<ModelLoader />}>
             <PerspectiveCamera makeDefault position={[0, 0, 10]} />
             <ambientLight intensity={12} />
-            <directionalLight position={[10, 10, 10]} intensity={4} />
+            <directionalLight position={[10, 10, 10]} intensity={6} />
             <pointLight position={[1, 1, 1]} />
             <CameraMove isMobile={isMobile}>
               {isMobile ? <OrbitControls /> : ""}
