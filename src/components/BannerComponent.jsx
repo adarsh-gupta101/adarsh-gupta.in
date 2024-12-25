@@ -27,7 +27,7 @@ function BannerComponent() {
 
   return (
     <div className="min-h-[70vh] w-full flex flex-col lg:flex-row justify-center items-center py-8 px-4 sm:px-6 lg:px-8 relative overflow-hidden animate-gradient">
-      <Spotlight className="-top-40 left-40 md:left-80 md:top-10" fill="purple" />
+      <Spotlight className="-top-40 left-0 md:left-80 md:top-10" fill="purple" />
       <div className="flex flex-col bg-none lg:flex-row items-center justify-between w-full max-w-7xl mb-8 lg:mb-0 z-10">
         {/* create a animated wave with css */}
 
