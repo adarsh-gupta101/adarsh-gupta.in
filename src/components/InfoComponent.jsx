@@ -1,10 +1,11 @@
 import Image from "next/image";
 import React from "react";
+import { Spotlight } from "./ui/SpoyLight";
 
 function InfoComponent() {
   const data = [
     {
-      title: "Hi, Adarsh Here",
+      title: "Hi, Again....",
       image: "/01.png",
       Description:
         "With 3 years of experience, I'm a software developer, from India, skilled in both frontend and backend",
@@ -24,12 +25,11 @@ function InfoComponent() {
   ];
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-4 pb-16 h-fit mb-24">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6  p-16  my-24">
       {data.map((item, index) => (
         <div
           key={index}
-
-          className="rounded-lg group  shadow-md border w-full flex flex-col items-start justify-center dark:bg-gray-800 bg-gray-200 hover:scale-105 transition-all duration-300 hover:shadow-xl hover:border-none"
+          className="rounded-lg group  shadow-md border w-full flex flex-col items-start justify-center dark:bg-gray-800 bg-gray-200 hover:scale-105 transition-all duration-300 hover:shadow-xl border-gray-300 hover:border-none"
         >
           {item.image && (
             <Image
@@ -41,8 +41,10 @@ function InfoComponent() {
             />
           )}
           <div className="p-4 flex-grow">
-            <h3 className="text-xl sm:text-2xl font-bold">{item.title}</h3>
-            <p className="text-sm sm:text-base text-gray-800 dark:text-gray-200 mt-2">
+            <h3 className="text-xl sm:text-2xl font-bold text-balance text-center">
+              {item.title}
+            </h3>
+            <p className="text-sm sm:text-base text-gray-800 dark:text-gray-200 mt-2  text-balance text-center">
               {item.Description}
             </p>
           </div>

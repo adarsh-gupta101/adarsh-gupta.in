@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { Water_Brush } from "next/font/google";
 import { ModeToggle } from "./ui/style-toggle";
+import { Spotlight } from "./ui/SpoyLight";
 
 const waterBrush = Water_Brush({
   subsets: ["latin"],
@@ -14,6 +15,7 @@ function NavbarContainer() {
 
   return (
     <div className="flex flex-col md:flex-row justify-between items-center px-4 md:px-16 py-4 my-4 mb-8 ">
+    
       <h1 className={`text-4xl md:text-6xl font-bold ${waterBrush.className} dark:text-white text-black`}>
         Adarsh Gupta
       </h1>
@@ -28,7 +30,7 @@ function NavbarContainer() {
        
       </div>
 
-      <ModeToggle />
+      {/* <ModeToggle /> */}
     </div>
   );
 }
