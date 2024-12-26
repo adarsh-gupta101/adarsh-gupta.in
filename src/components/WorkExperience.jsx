@@ -81,7 +81,7 @@ const ExperiencesComponent = () => {
           Professional Experiences
         </h2>
             <Spotlight
-              className="-top-40 left-40 md:left-90 md:-top-80"
+              className="-top-40 left-10 md:left-90 md:-top-80 blur-xl"
               fill="violet"
             />
         <div className="space-y-6">

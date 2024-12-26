@@ -45,10 +45,7 @@ export function RecentBlogs() {
                 className="-top-40 left-0 md:left-80 md:-top-20"
                 fill="blue"
               />
-              <Spotlight
-                className="top-40 left-0 md:left-80 md:-top-20"
-                fill="yellow"
-              />
+             
               <div>
                 <div className="relative pb-48 overflow-hidden">
                   <Image
