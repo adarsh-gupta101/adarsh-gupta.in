@@ -17,8 +17,11 @@ function ServicesComponent() {
   const isTablet = useMediaQuery({ minWidth: 769, maxWidth: 1024 });
 
   return (
-    <div className="flex flex-col items-center justify-center pt-4 md:pt-16 min-h-screen h-fit w-full">
-      <h1 className="text-5xl font-extrabold text-center mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-pink-500">
+    <div className="flex flex-col items-center justify-center dark:bg-grid-white/[0.2] relative bg-grid-slate-900/[0.2] pt-4 md:pt-16 min-h-screen h-fit w-full">
+      {/* <div className="h-full w-full    dark:bg-grid-white/[0.2] bg-grid-slate-900/[0.2] relative flex items-center justify-center"> */}
+      <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-slate-900  [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
+
+      <h1 className="text-5xl font-extrabold text-center mb-4 bg-clip-text text-transparent z-10 bg-gradient-to-r from-blue-400 to-pink-500">
         Services Only Available for People in Earth now!{" "}
       </h1>
       <p className="text-xl text-center dark:text-gray-100 my-4">
@@ -48,8 +51,8 @@ function ServicesComponent() {
         <Link href="https://x.com/adarsh____gupta">
           Hire me if you are from here 👋🏻
         </Link>
-      </h2>
-    </div>
+      </h2></div>
+    
   );
 }
 
