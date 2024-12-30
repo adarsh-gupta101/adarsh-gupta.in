@@ -29,7 +29,7 @@ export function RecentBlogs() {
 
   return (
     <div className="w-full mt-16 rounded-md bg-white/[0.02] relative overflow-hidden">
-      <Spotlight className="-top-40 left-0 md:left-80 md:-top-20" fill="purple" />
+      {/* <Spotlight className="-top-40 left-0 md:left-80 md:-top-20" fill="purple" /> */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-10 py-8">
         <h2 className="text-3xl font-bold mb-8 text-left text-gray-800 dark:text-gray-200">
           Recent Blogs

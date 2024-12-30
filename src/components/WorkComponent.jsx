@@ -95,7 +95,7 @@ function WorkComponent() {
         </Canvas>
       </div>
       <div className="flex flex-col justify-center items-center">
-        <h3 className="text-gray-800 text-center dark:text-gray-200 text-3xl m-4 md:text-6xl font-bold">
+      <h3 className="text-4xl sm:text-7xl font-bold relative z-20 bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-500 py-8">
           Good to meet you here
         </h3>
        

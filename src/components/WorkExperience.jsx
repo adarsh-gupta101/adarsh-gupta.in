@@ -76,14 +76,11 @@ const ExperiencesComponent = () => {
 
   return (
     <div className="w-full mt-16 rounded-md bg-white/[0.02] relative overflow-hidden">
-      <div className="container mx-auto px-10 py-8">
+      <div className="container mx-auto p-4 md:px-10 md:py-8">
         <h2 className="text-3xl font-bold mb-8 text-left text-gray-800 dark:text-gray-200">
           Professional Experiences
         </h2>
-            <Spotlight
-              className="-top-40 left-10 md:left-90 md:-top-80 blur-xl"
-              fill="violet"
-            />
+          
         <div className="space-y-6">
           {paginatedExperiences.map((experience) => (
             <div
