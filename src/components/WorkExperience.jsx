@@ -13,7 +13,7 @@ const ExperiencesComponent = () => {
       Work: "Systems Engineer",
       Date: "October 2024 - Present",
       Description:
-        "Currently working as a Java Backend Developer in the TCS BaNCS implementation team. Responsible for designing and implementing robust backend systems, ensuring scalability, and collaborating with cross-functional teams to deliver enterprise-grade solutions.",
+        "Currently working as a Java Backend Developer in the TCS BaNCS implementation team. Responsible for designing and implementing backend systems, ensuring scalability, and collaborating with cross-functional teams.",
     },
     {
       id: 5,
@@ -77,45 +77,38 @@ const ExperiencesComponent = () => {
   return (
     <div className="w-full mt-16 rounded-md bg-white/[0.02] relative overflow-hidden">
       <div className="container mx-auto p-4 md:px-10 md:py-8">
-        <h2 className="text-3xl font-bold mb-8 text-left text-gray-800 dark:text-gray-200">
-          Professional Experiences
+        <h2 className="text-3xl font-bold mb-12 text-left text-gray-800 dark:text-gray-200">
+          Professional Journey
         </h2>
-          
-        <div className="space-y-6">
-          {paginatedExperiences.map((experience) => (
-            <div
-              key={experience.id}
-              className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105 p-6"
-            >
 
-              <h3 className="text-xl font-semibold mb-2 text-gray-800 dark:text-gray-100">
-                {experience.Work} at {experience.Company}
-              </h3>
-              <p className="text-sm text-gray-500 dark:text-gray-400 mb-2">
-                {experience.Date}
-              </p>
-              <p className="text-base text-gray-600 dark:text-gray-400">
-                {experience.Description}
-              </p>
-            </div>
-          ))}
+        <div className="relative">
+          {/* Timeline line */}
+          <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gray-300 dark:bg-gray-700"></div>
+
+          <div className="space-y-12">
+            {Experiences.map((experience) => (
+              <div key={experience.id} className="relative flex items-start">
+                {/* Timeline dot */}
+                <div className="absolute left-8 -translate-x-1/2 w-4 h-4 rounded-full bg-blue-500 border-4 border-white dark:border-gray-900"></div>
+
+                {/* Content */}
+                <div className="ml-16 bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden transition-all duration-300 ease-in-out hover:shadow-lg p-6 w-full">
+                  <div className="flex flex-col md:flex-row md:justify-between md:items-center mb-2">
+                    <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-100">
+                      {experience.Work} at {experience.Company}
+                    </h3>
+                    <span className="text-sm text-blue-500 dark:text-blue-400 font-medium">
+                      {experience.Date}
+                    </span>
+                  </div>
+                  <p className="text-base text-gray-600 dark:text-gray-400 mt-2">
+                    {experience.Description}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
-        {/* <div className="flex justify-between mt-8">
-          <button
-            onClick={prevSlide}
-            className="bg-gray-800 text-white p-3 rounded-full hover:scale-110 ease-in duration-100"
-            disabled={currentPage === 0}
-          >
-            Previous
-          </button>
-          <button
-            onClick={nextSlide}
-            className="bg-gray-800 text-white p-3 rounded-full hover:scale-110 ease-in duration-100"
-            disabled={(currentPage + 1) * itemsPerPage >= Experiences.length}
-          >
-            Next
-          </button> */}
-        {/* </div> */}
       </div>
     </div>
   );

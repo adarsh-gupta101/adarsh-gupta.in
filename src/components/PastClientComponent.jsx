@@ -17,6 +17,13 @@ function PastClientComponent() {
         "A 9-in-one Application where you can chat with different chat and image models. You can also create UI templates directly from the chat.",
     },
     {
+      title:"Ship Your Saas",
+      description:"A personal boilerplate to ship apps faster.",
+      image:"/work4.png",
+      link:"https://github.com/adarsh-gupta101/",
+      tech:["Next.js", "Stripe",  "Supabase", "Clerk", "Vercel"]
+    },
+    {
       title:" Gradient Generator",
       description:"A Simple HTML CSS gradient generator, which can be use build 1000's of gradients on fly",
       image:"/work3.png",
@@ -34,13 +41,7 @@ function PastClientComponent() {
       description:
         "An interactive web app to find buses running on specific routes and times in Kerala. Currently under development.",
     },
-    {
-      title:"Ship Your Saas",
-      description:"A personal boilerplate to ship apps faster.",
-      image:"/work4.png",
-      link:"https://github.com/adarsh-gupta101/",
-      tech:["Next.js", "Stripe",  "Supabase", "Clerk", "Vercel"]
-    }
+   
   ];
 
   const nextSlide = () => {
