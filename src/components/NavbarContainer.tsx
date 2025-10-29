@@ -30,7 +30,7 @@ function NavbarContainer() {
        
       </div>
 
-      {/* <ModeToggle /> */}
+      <ModeToggle />
     </div>
   );
 }
