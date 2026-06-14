@@ -21,11 +21,11 @@ function ServicesComponent() {
       {/* <div className="h-full w-full    dark:bg-grid-white/[0.2] bg-grid-slate-900/[0.2] relative flex items-center justify-center"> */}
       <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-slate-900  [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
 
-      <h1 className="text-5xl font-extrabold text-center mb-4 bg-clip-text text-transparent z-10 bg-gradient-to-r from-blue-400 to-pink-500">
-        Services Only Available for People in Earth now!{" "}
+      <h1 className="text-3xl font-semibold text-center mb-3 text-gray-900 dark:text-gray-100 z-10">
+        Services
       </h1>
-      <p className="text-xl text-center dark:text-gray-100 my-4">
-        I am currently working on expanding it to Mars{" "}
+      <p className="text-base text-center text-gray-500 dark:text-gray-400 my-3 max-w-md">
+        Full-stack development, technical writing, and freelance consulting — available worldwide.
       </p>
       {/* <div className="w-full h-full flex-grow"></div> */}
       <div className="w-full h-[50vh] flex-grow">
@@ -47,11 +47,12 @@ function ServicesComponent() {
           </Suspense>
         </Canvas>
       </div>
-      <h2 className="text-2xl font-normal text-gray-800 dark:text-gray-100 text-center underline underline-offset-4 ">
-        <Link href="https://x.com/adarsh____gupta">
-          Hire me if you are from here 👋🏻
-        </Link>
-      </h2></div>
+      <Link
+        href="mailto:adarshguptaworks@gmail.com"
+        className="text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white border border-gray-300 dark:border-gray-700 px-5 py-2.5 rounded-md transition-colors duration-200 mt-4"
+      >
+        Get in Touch →
+      </Link></div>
     
   );
 }

@@ -95,11 +95,12 @@ function WorkComponent() {
         </Canvas>
       </div>
       <div className="flex flex-col justify-center items-center">
-      <h3 className="text-4xl sm:text-7xl font-bold relative z-20 bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 text-center to-neutral-500 py-8">
-          Good to meet you here
+        <h3 className="text-2xl sm:text-3xl font-semibold text-gray-900 dark:text-gray-100 text-center py-6">
+          Let&apos;s Connect
         </h3>
-       
-
+        <p className="text-sm text-gray-500 dark:text-gray-400 text-center mb-6 max-w-xs">
+          Find me on these platforms or reach out directly.
+        </p>
 
         <div className="flex flex-row gap-2 flex-wrap justify-center">
           <SocialLink

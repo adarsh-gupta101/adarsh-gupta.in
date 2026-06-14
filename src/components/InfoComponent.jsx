@@ -1,35 +1,34 @@
 import Image from "next/image";
 import React from "react";
-import { Spotlight } from "./ui/SpoyLight";
 
 function InfoComponent() {
   const data = [
     {
-      title: "Hi, Again....",
+      title: "About Me",
       image: "/01.png",
       Description:
-        "With 3 years of experience, I'm a software developer, from India, skilled in both frontend and backend",
+        "Software developer from India with 3+ years of experience building full-stack web applications using React, Next.js, and Node.js.",
     },
     {
       title: "Skillset",
       image: "/02.png",
       Description:
-        "Comfortable with both frontend and backend development, with a focus on Next.js",
+        "Proficient in frontend and backend development with a focus on Next.js, TypeScript, and modern web technologies.",
     },
     {
-      title: "Available for work",
+      title: "Open to Opportunities",
       image: "/03.png",
       Description:
-        "I'm currently available for work, and I'm looking for a new opportunity to work with a great team and make a difference.",
+        "Currently open to new roles and freelance projects. Looking to collaborate with teams building impactful products.",
     },
   ];
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-6 md:p-16  my-24">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 p-6 md:p-16 my-16">
       {data.map((item, index) => (
         <div
           key={index}
-          className="rounded-lg group  shadow-md border w-full flex flex-col items-start justify-center dark:bg-gray-800 bg-gray-200 hover:scale-105 transition-all duration-300 hover:shadow-xl border-gray-300 hover:border-none"
+          className="rounded-lg border border-gray-200 dark:border-gray-800 w-full flex flex-col items-start bg-white dark:bg-gray-900 hover:border-gray-300 dark:hover:border-gray-700 transition-colors duration-200"
         >
           {item.image && (
             <Image
@@ -37,14 +36,14 @@ function InfoComponent() {
               alt={item.title}
               width={400}
               height={400}
-              className="w-full h-48 sm:h-56 md:h-64 object-contain  transition-all duration-300 rounded-t-lg rotate-3d bg-gray-800 dark:invert-0"
+              className="w-full h-48 sm:h-52 object-contain rounded-t-lg bg-gray-50 dark:bg-gray-800"
             />
           )}
-          <div className="p-4 flex-grow">
-            <h3 className="text-xl sm:text-2xl font-bold text-balance text-center">
+          <div className="p-5 flex-grow">
+            <h3 className="text-base font-semibold text-gray-900 dark:text-gray-100 mb-2">
               {item.title}
             </h3>
-            <p className="text-sm sm:text-base text-gray-800 dark:text-gray-200 mt-2  text-balance text-center">
+            <p className="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">
               {item.Description}
             </p>
           </div>

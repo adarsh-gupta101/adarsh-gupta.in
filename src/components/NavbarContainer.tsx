@@ -13,25 +13,58 @@ const waterBrush = Water_Brush({
 function NavbarContainer() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  const navLinks = [
+    { label: "About", href: "#about" },
+    { label: "Experience", href: "#experience" },
+    { label: "Projects", href: "#projects" },
+    { label: "Blog", href: "#blog" },
+    { label: "Contact", href: "mailto:adarshguptaworks@gmail.com" },
+  ];
+
   return (
-    <div className="flex flex-col md:flex-row justify-between items-center px-4 md:px-16 py-4 my-4 mb-8 ">
-    
-      <h1 className={`text-4xl md:text-6xl font-bold ${waterBrush.className} dark:text-white text-black`}>
+    <nav className="flex flex-col md:flex-row justify-between items-center px-4 md:px-16 py-4 my-4 mb-8">
+      <h1 className={`text-3xl md:text-4xl font-bold ${waterBrush.className} dark:text-white text-black`}>
         Adarsh Gupta
       </h1>
 
-      <div className="md:hidden mt-4">
-        {/* <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
+      <div className="hidden md:flex items-center gap-8">
+        {navLinks.map((link) => (
+          <a
+            key={link.label}
+            href={link.href}
+            className="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors duration-200"
+          >
+            {link.label}
+          </a>
+        ))}
+        <ModeToggle />
+      </div>
+
+      <div className="md:hidden flex items-center gap-4 mt-3">
+        <ModeToggle />
+        <button
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          className="text-sm font-medium text-gray-600 dark:text-gray-300"
+        >
           {isMenuOpen ? "Close" : "Menu"}
-        </button> */}
+        </button>
       </div>
 
-      <div className={`${isMenuOpen ? 'block' : 'hidden'} md:block mt-4 md:mt-0`}>
-       
-      </div>
-
-      <ModeToggle />
-    </div>
+      {isMenuOpen && (
+        <div className="md:hidden w-full mt-4 flex flex-col gap-3 border-t dark:border-gray-700 border-gray-200 pt-4">
+          {navLinks.map((link) => (
+            <a
+              key={link.label}
+              href={link.href}
+              onClick={() => setIsMenuOpen(false)}
+              className="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors"
+            >
+              {link.label}
+            </a>
+          ))}
+        </div>
+      )}
+    </nav>
   );
 }
 

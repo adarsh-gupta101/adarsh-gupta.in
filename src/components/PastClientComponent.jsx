@@ -56,52 +56,59 @@ function PastClientComponent() {
 
   return (
     <div className="w-full mt-16 rounded-md bg-gray-50 dark:bg-white/[0.02] relative overflow-hidden min-h-[60vh]">
-      <h3 className="text-2xl px-4 py-2 font-bold">Past Works</h3>
+      <div className="flex items-center justify-between px-4 py-2 mb-2">
+        <h3 className="text-2xl font-semibold text-gray-800 dark:text-gray-200" id="projects">Projects</h3>
+        <div className="flex gap-2">
+          <button
+            onClick={prevSlide}
+            className="flex items-center justify-center w-8 h-8 rounded-md border border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors text-sm"
+          >
+            ←
+          </button>
+          <button
+            onClick={nextSlide}
+            className="flex items-center justify-center w-8 h-8 rounded-md border border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors text-sm"
+          >
+            →
+          </button>
+        </div>
+      </div>
       <div className="relative p-4">
-        <div className="flex flex-col md:flex-row items-center justify-center">
+        <div className="flex flex-col md:flex-row items-center gap-8">
           <Image
             src={pastWorks[currentIndex].image}
             alt={pastWorks[currentIndex].title}
             width={600}
             height={600}
-            className="w-full md:w-1/2 rounded-md object-contain transition-all duration-300 p-4 brightness-125"
+            className="w-full md:w-1/2 rounded-lg object-contain transition-all duration-300 p-2 border border-gray-200 dark:border-gray-800"
           />
-          <div className="mt-4 md:mt-0 md:ml-8 text-center md:text-left md:w-1/2">
-            <h3 className="text-2xl font-bold">
+          <div className="mt-4 md:mt-0 text-center md:text-left md:w-1/2">
+            <span className="text-xs text-gray-400 dark:text-gray-500 font-medium">
+              {currentIndex + 1} / {pastWorks.length}
+            </span>
+            <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mt-1 mb-3">
               {pastWorks[currentIndex].title}
             </h3>
-            <p className="text-normal text-gray-500 dark:text-gray-200 mt-2">
+            <p className="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">
               {pastWorks[currentIndex].description}
             </p>
             <div className="flex flex-wrap gap-2 justify-center md:justify-start mt-4">
               {pastWorks[currentIndex].tech.map((tech, index) => (
                 <span
                   key={index}
-                  className="text-sm bg-gray-100 dark:bg-white/5 px-2 py-1 rounded-md"
+                  className="text-xs bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 px-2.5 py-1 rounded-md border border-gray-200 dark:border-gray-700"
                 >
                   {tech}
                 </span>
               ))}
             </div>
-            <Link href={pastWorks[currentIndex].link} className="inline-block">
-              <Button className="mt-4">
-                Visit →
+            <Link href={pastWorks[currentIndex].link} className="inline-block mt-5">
+              <Button className="text-sm h-9 px-4">
+                View Project →
               </Button>
             </Link>
           </div>
         </div>
-        <button
-          onClick={prevSlide}
-          className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-black/50 text-white p-2 rounded-r"
-        >
-          &lt;
-        </button>
-        <button
-          onClick={nextSlide}
-          className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-black/50 text-white p-2 rounded-l"
-        >
-          &gt;
-        </button>
       </div>
     </div>
   );

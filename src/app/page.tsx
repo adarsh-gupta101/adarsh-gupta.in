@@ -10,10 +10,10 @@ import ServicesComponent from "@/components/ServicesComponent";
 import WorkExperience from "@/components/WorkExperience"
 export default function Page() {
   return (
-    <div className="h-full dark:bg-slate-900  px-8 py-4">
+    <div className="h-full dark:bg-gray-950 bg-white px-8 py-4 max-w-screen-xl mx-auto">
       <NavbarContainer />
       <BannerComponent />
-      <div className="flex w-full justify-center items-center">
+      <div className="flex w-full justify-center items-center my-8">
         <HireMeButton />
       </div>
 
@@ -29,13 +29,10 @@ export default function Page() {
 
 function HireMeButton() {
   return (
-    // Button code
-    <Link href={"mailto:adarshguptaworks@gmail.com"} className="hover:pb-6">
-      <button className=" inline-flex h-12 text-xl animate-shimmer items-center justify-center rounded-md border border-s-black dark:border-slate-400 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] px-6 font-medium text-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
-        Hire Me 🚀
+    <Link href={"mailto:adarshguptaworks@gmail.com"}>
+      <button className="inline-flex h-11 text-base items-center justify-center rounded-md border border-gray-300 dark:border-gray-600 bg-black dark:bg-white px-8 font-medium text-white dark:text-black hover:bg-gray-800 dark:hover:bg-gray-100 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2">
+        Get in Touch
       </button>
     </Link>
-
-    // tailwind.config.js code
   );
 }

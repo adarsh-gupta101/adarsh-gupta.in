@@ -77,8 +77,8 @@ const ExperiencesComponent = () => {
   return (
     <div className="w-full mt-16 rounded-md bg-white/[0.02] relative overflow-hidden">
       <div className="container mx-auto p-4 md:px-10 md:py-8">
-        <h2 className="text-3xl font-bold mb-12 text-left text-gray-800 dark:text-gray-200">
-          Professional Journey
+        <h2 className="text-2xl font-semibold mb-12 text-left text-gray-800 dark:text-gray-200" id="experience">
+          Experience
         </h2>
 
         <div className="relative">
@@ -92,16 +92,17 @@ const ExperiencesComponent = () => {
                 <div className="absolute left-8 -translate-x-1/2 w-4 h-4 rounded-full bg-blue-500 border-4 border-white dark:border-gray-900"></div>
 
                 {/* Content */}
-                <div className="ml-16 bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden transition-all duration-300 ease-in-out hover:shadow-lg p-6 w-full">
-                  <div className="flex flex-col md:flex-row md:justify-between md:items-center mb-2">
-                    <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-100">
-                      {experience.Work} at {experience.Company}
+                <div className="ml-16 bg-white dark:bg-gray-900 rounded-lg border border-gray-200 dark:border-gray-800 p-5 w-full hover:border-gray-300 dark:hover:border-gray-700 transition-colors duration-200">
+                  <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-2 gap-1">
+                    <h3 className="text-base font-semibold text-gray-900 dark:text-gray-100">
+                      {experience.Work}
+                      <span className="font-normal text-gray-500 dark:text-gray-400"> · {experience.Company}</span>
                     </h3>
-                    <span className="text-sm text-blue-500 dark:text-blue-400 font-medium">
+                    <span className="text-xs text-gray-400 dark:text-gray-500 whitespace-nowrap">
                       {experience.Date}
                     </span>
                   </div>
-                  <p className="text-base text-gray-600 dark:text-gray-400 mt-2">
+                  <p className="text-sm text-gray-600 dark:text-gray-400 mt-2 leading-relaxed">
                     {experience.Description}
                   </p>
                 </div>
