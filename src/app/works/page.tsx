@@ -1,11 +1,5 @@
-import React from 'react'
+import { redirect } from "next/navigation";
 
-function page() {
-  return (
-    <div>
-      
-    </div>
-  )
+export default function WorksPage() {
+  redirect("/#work");
 }
-
-export default page
